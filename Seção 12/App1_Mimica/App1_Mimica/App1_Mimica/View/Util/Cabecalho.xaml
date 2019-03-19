@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_Mimica.View.Util.Cabecalho">
+    <ContentView.Content>
+        <StackLayout Style="{StaticResource Cabecalho}" >
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Jogo de Mimica" Style="{StaticResource CabecalhoTitulo}" HorizontalOptions="StartAndExpand"/>
+                <Label Text="Sair" TextColor="White" HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="SairAction" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding JogoIniciado}">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Label Text="Rodada Atual" Style="{StaticResource CabecalhoTitulo}"/>
+                    <Label Text="{Binding RodadaAtual}" Style="{StaticResource CabecalhoTitulo}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pontuação Grupo 1:" FontAttributes="Bold" Style="{StaticResource CabecalhoTitulo}"/>
+                    <Label Text="{Binding Pontuacao1}" Style="{StaticResource CabecalhoTitulo}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Pontuação Grupo 2:" FontAttributes="Bold" Style="{StaticResource CabecalhoTitulo}"/>
+                    <Label Text="{Binding Pontuacao2}" Style="{StaticResource CabecalhoTitulo}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
